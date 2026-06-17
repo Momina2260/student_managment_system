@@ -17,9 +17,7 @@ body {
     animation:fadeIn 2s ease;
     
 }
-.container:hover{
-    background-color:rgba(231, 154, 115,0.3);
-}
+
 hr {
     margin: 20px 0;
 }
@@ -74,7 +72,7 @@ button {
     text-align: center;
     font-weight: bold;
     margin-top: 10px;
-    transition: 0.3s;
+    transition: 1s;
 }
 button:hover{
 
