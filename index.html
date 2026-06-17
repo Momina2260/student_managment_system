@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>student management system</title>
+    <Link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+    
+</head>
+<body>
+   <div class="container">
+     <header id="header"><h1>Student managment system</h1></header>
+    
+        <hr>
+        <h2>student information</h2>
+        <input type="text" id="name" placeholder="please enter your name..."><br>
+        <input type="text" id="roll" placeholder="please enter your roll no..."><br>
+        <input type="text" id="department" placeholder="please enter your department..."><br>
+        <hr>
+        <h2>subject marks</h2>
+        <input type="number" id="eng" placeholder="enter marks for eng"><br>
+        <input type="number" id="math" placeholder="enter marks for math"><br>
+        <input type="number" id="science" placeholder="enter marks for science"><br>
+        <input type="number" id="programming" placeholder="enter marks for programming"><br>
+        <input type="number" id="urdu" placeholder="enter marks for urdu"><br>
+        <button onclick="calculateResult()">calculate result</button>
+
+        <hr>
+        <h2>result Card</h2>
+        <div class="result" id="result"></div>
+        <hr>
+        <h2>profile card</h2>
+        <div class="profile" id="profile"></div>
+        <button onclick="toggleTheme()">Change Theme</button>
+
+
+    
+   </div>
+</body>
+</html>

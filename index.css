@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+   transition: background-color 0.5s,
+                color 0.5s;
+}
+
+.container {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    animation:fadeIn 2s ease;
+    
+}
+.container:hover{
+    background-color:rgba(231, 154, 115,0.3);
+}
+hr {
+    margin: 20px 0;
+}
+
+#header {
+    padding: 10px;
+    text-align: center;
+    background-color: rgb(201, 94, 48);
+
+}
+
+
+
+input[type='text'],
+input[type='number'] {
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid gray;
+    border-radius: 20px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2) inset;
+    width: 50%;
+    text-align: center;
+ animation:fadeIn 2s ease;
+    
+
+
+
+}
+
+h1,
+h2 {
+    margin: 20px;
+      animation:slidedown 2s;
+}
+
+input[type='text']:focus,
+input[type='number']:focus {
+    outline: none;
+    border-left: 2px solid gray;
+    outline: none;
+    border-bottom: 2px solid gray;
+    
+
+}
+input[type='text']:hover,input[type='number']:hover{
+    animation: move 1s;
+}
+button {
+    padding: 8px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+button:hover{
+
+    transform: scale(1.05);
+}
+
+.dark .container {
+    background: #2c2c2c;
+}
+
+.dark {
+    background: #1e1e1e;
+    color: white;
+}
+
+.profile,
+.result {
+    border: 1px solid gray;
+    padding: 20px;
+    border-radius: 10px;
+    line-height: 1.6;
+    transition: 0.4s;
+    animation: fadeIn 2s ease;
+}
+.profile:hover,
+.result:hover{
+    transform:translateY((-5px));
+    background-color:rgba(231, 154, 115,0.3);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: rotateY(0);
+    }
+}
+
+@keyframes slidedown{
+    from{
+        opacity: 0;
+        transform:translate(-5px);
+
+
+    }
+    to{
+        opacity: 1;
+        transform:translateY(0)
+
+    }
+}
+
+@keyframes move{
+    from{
+       transform: translate3d(0,0,0);
+    }
+    to{
+        
+         transform: translate3d(0,20px,10px);
+    }
+}
