@@ -1,109 +1,379 @@
+/* =========================
+   CSS VARIABLES
+========================= */
+
+:root {
+    --primary: #7c3aed;
+    --secondary: #a855f7;
+    --success: #22c55e;
+    --danger: #ef4444;
+    --warning: #f59e0b;
+
+    --bg: #f4f4f5;
+    --card-bg: #ffffff;
+    --text: #222;
+    --border: #ddd;
+
+    --shadow:
+        0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================
+   DARK MODE
+========================= */
+
+.dark {
+    --bg: #111827;
+    --card-bg: #1f2937;
+    --text: #f9fafb;
+    --border: #374151;
+}
+
+/* =========================
+   RESET
+========================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* =========================
+   BODY
+========================= */
+
 body {
-    font-family: 'Inter', sans-serif;
-   transition: background-color 0.5s,
-                color 0.5s;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: 0.4s;
 }
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color: white;
+
+    padding: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    box-shadow: var(--shadow);
+}
+
+.header h1 {
+    margin-bottom: 10px;
+}
+
+.header-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* =========================
+   CONTAINER
+========================= */
 
 .container {
-    width: 100%;
-    margin: auto;
-    text-align: center;
-    animation:fadeIn 2s ease;
-    
+    width: 95%;
+    max-width: 1300px;
+    margin: 25px auto;
 }
 
-hr {
-    margin: 20px 0;
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard {
+    width: 95%;
+    max-width: 1300px;
+
+    margin: 25px auto;
+
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 20px;
 }
 
-#header {
-    padding: 10px;
-    text-align: center;
-    background-color: rgb(201, 94, 48);
+.dashboard-card {
+    background: var(--card-bg);
 
-}
+    border-radius: 15px;
 
-
-
-input[type='text'],
-input[type='number'] {
     padding: 20px;
-    margin: 20px;
-    border: 1px solid gray;
-    border-radius: 20px;
-    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2) inset;
-    width: 50%;
+
     text-align: center;
- animation:fadeIn 2s ease;
-    
 
+    box-shadow: var(--shadow);
 
-
+    animation: fadeUp 0.6s ease;
 }
 
-h1,
-h2 {
-    margin: 20px;
-      animation:slidedown 2s;
-}
-
-input[type='text']:focus,
-input[type='number']:focus {
-    outline: none;
-    border-left: 2px solid gray;
-    outline: none;
-    border-bottom: 2px solid gray;
-    
-
-}
-input[type='text']:hover,input[type='number']:hover{
-    animation: move 1s;
-}
-button {
-    padding: 8px;
-    border: 1px solid gray;
-    border-radius: 5px;
-    text-align: center;
+.dashboard-card p {
+    font-size: 2rem;
     font-weight: bold;
     margin-top: 10px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+    background: var(--card-bg);
+
+    padding: 25px;
+
+    margin-bottom: 25px;
+
+    border-radius: 15px;
+
+    box-shadow: var(--shadow);
+
+    animation: fadeUp 0.7s ease;
+}
+
+.card h2 {
+    margin-bottom: 20px;
+    color: var(--primary);
+}
+
+/* =========================
+   FORM GRID
+========================= */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 15px;
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+input {
+    padding: 14px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    background: var(--card-bg);
+
+    color: var(--text);
+
+    transition: 0.3s;
+}
+
+input:focus {
+    outline: none;
+
+    border-color: var(--primary);
+
+    transform: scale(1.02);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.button-group {
+    margin-top: 20px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+button {
+    padding: 12px 18px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: var(--primary);
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+}
+
+/* =========================
+   RESULT + PROFILE
+========================= */
+
+.cards-wrapper {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(300px, 1fr));
+
+    gap: 20px;
+}
+
+.result-card,
+.profile-card,
+.topper-card {
+    min-height: 220px;
+}
+
+/* =========================
+   PROGRESS BAR
+========================= */
+
+.progress {
+    width: 100%;
+    height: 18px;
+
+    background: #ddd;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    margin-top: 10px;
+}
+
+.progress-fill {
+    height: 100%;
+
+    background: var(--success);
+
     transition: 1s;
 }
-button:hover{
 
-    transform: scale(1.05);
+/* =========================
+   TABLE
+========================= */
+
+.table-container {
+    overflow-x: auto;
 }
 
-.dark .container {
-    background: #2c2c2c;
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 900px;
 }
 
-.dark {
-    background: #1e1e1e;
+th {
+    background: var(--primary);
     color: white;
 }
 
-.profile,
-.result {
-    border: 1px solid gray;
-    padding: 20px;
-    border-radius: 10px;
-    line-height: 1.6;
-    transition: 0.4s;
-    animation: fadeIn 2s ease;
-}
-.profile:hover,
-.result:hover{
-    transform:translateY((-5px));
-    background-color:rgba(231, 154, 115,0.3);
+th,
+td {
+    padding: 14px;
+
+    text-align: center;
+
+    border: 1px solid var(--border);
 }
 
-@keyframes fadeIn {
+tbody tr:hover {
+    background: rgba(124, 58, 237, 0.08);
+}
+
+/* =========================
+   SEARCH BOX
+========================= */
+
+#searchStudent {
+    width: 100%;
+}
+
+/* =========================
+   ACTION BUTTONS
+========================= */
+
+.edit-btn {
+    background: var(--warning);
+}
+
+.delete-btn {
+    background: var(--danger);
+}
+
+/* =========================
+   TOAST
+========================= */
+
+.toast {
+    position: fixed;
+
+    bottom: 20px;
+    right: 20px;
+
+    background: var(--success);
+
+    color: white;
+
+    padding: 15px 20px;
+
+    border-radius: 10px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: 0.4s;
+}
+
+.toast.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+
+    padding: 20px;
+
+    background: var(--card-bg);
+
+    margin-top: 30px;
+
+    border-top: 1px solid var(--border);
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeUp {
     from {
         opacity: 0;
         transform: translateY(20px);
@@ -111,30 +381,49 @@ button:hover{
 
     to {
         opacity: 1;
-        transform: rotateY(0);
+        transform: translateY(0);
     }
 }
 
-@keyframes slidedown{
-    from{
-        opacity: 0;
-        transform:translate(-5px);
+/* =========================
+   PRINT MODE
+========================= */
 
+@media print {
 
+    button,
+    #searchStudent,
+    .toast {
+        display: none;
     }
-    to{
-        opacity: 1;
-        transform:translateY(0)
 
+    body {
+        background: white;
+    }
+
+    .card,
+    .dashboard-card {
+        box-shadow: none;
     }
 }
 
-@keyframes move{
-    from{
-       transform: translate3d(0,0,0);
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
     }
-    to{
-        
-         transform: translate3d(0,20px,10px);
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
     }
 }

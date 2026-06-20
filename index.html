@@ -1,40 +1,204 @@
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>student management system</title>
-    <Link rel="stylesheet" href="index.css">
+    <title>Student Portfolio & Result Management System</title>
+
+    <link rel="stylesheet" href="index.css">
     <script src="index.js"></script>
-    
 </head>
+
 <body>
-   <div class="container">
-     <header id="header"><h1>Student managment system</h1></header>
-    
-        <hr>
-        <h2>student information</h2>
-        <input type="text" id="name" placeholder="please enter your name..."><br>
-        <input type="text" id="roll" placeholder="please enter your roll no..."><br>
-        <input type="text" id="department" placeholder="please enter your department..."><br>
-        <hr>
-        <h2>subject marks</h2>
-        <input type="number" id="eng" placeholder="enter marks for eng"><br>
-        <input type="number" id="math" placeholder="enter marks for math"><br>
-        <input type="number" id="science" placeholder="enter marks for science"><br>
-        <input type="number" id="programming" placeholder="enter marks for programming"><br>
-        <input type="number" id="urdu" placeholder="enter marks for urdu"><br>
-        <button onclick="calculateResult()">calculate result</button>
 
-        <hr>
-        <h2>result Card</h2>
-        <div class="result" id="result"></div>
-        <hr>
-        <h2>profile card</h2>
-        <div class="profile" id="profile"></div>
-        <button onclick="toggleTheme()">Change Theme</button>
+    <!-- Header -->
+    <header class="header">
+        <h1>🎓 Student Portfolio & Result Management System</h1>
 
+        <div class="header-controls">
+            <span id="currentDate"></span>
+            <button onclick="toggleTheme()">🌙 Theme</button>
+        </div>
+    </header>
 
-    
-   </div>
+    <!-- Dashboard -->
+    <section class="dashboard">
+
+        <div class="dashboard-card">
+            <h3>Total Students</h3>
+            <p id="totalStudents">0</p>
+        </div>
+
+        <div class="dashboard-card">
+            <h3>Passed</h3>
+            <p id="passStudents">0</p>
+        </div>
+
+        <div class="dashboard-card">
+            <h3>Failed</h3>
+            <p id="failStudents">0</p>
+        </div>
+
+        <div class="dashboard-card">
+            <h3>Highest %</h3>
+            <p id="highestPercentage">0%</p>
+        </div>
+
+    </section>
+
+    <main class="container">
+
+        <!-- Student Information -->
+        <section class="card">
+            <h2>Student Information</h2>
+
+            <div class="form-grid">
+
+                <input type="text" id="name" placeholder="Enter Student Name">
+
+                <input type="text" id="roll" placeholder="Enter Roll Number">
+
+                <input type="text" id="department" placeholder="Enter Department">
+
+            </div>
+        </section>
+
+        <!-- Subject Marks -->
+        <section class="card">
+
+            <h2>Subject Marks</h2>
+
+            <div class="form-grid">
+
+                <input type="number" id="eng" placeholder="English Marks">
+
+                <input type="number" id="math" placeholder="Math Marks">
+
+                <input type="number" id="science" placeholder="Science Marks">
+
+                <input type="number" id="programming" placeholder="Programming Marks">
+
+                <input type="number" id="urdu" placeholder="Urdu Marks">
+
+            </div>
+
+            <div class="button-group">
+
+                <button onclick="calculateResult()">
+                    Calculate Result
+                </button>
+
+                <button onclick="clearForm()">
+                    Clear Form
+                </button>
+
+                <button onclick="window.print()">
+                    Print Report
+                </button>
+
+                <button onclick="exportData()">
+                    Export Data
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- Result & Profile -->
+        <section class="cards-wrapper">
+
+            <div class="card result-card">
+                <h2>Result Card</h2>
+
+                <div id="result">
+                    No Result Generated Yet
+                </div>
+            </div>
+
+            <div class="card profile-card">
+                <h2>Profile Card</h2>
+
+                <div id="profile">
+                    No Profile Available
+                </div>
+            </div>
+
+            <div class="card topper-card">
+                <h2>🏆 Top Student</h2>
+
+                <div id="topper">
+                    No Student Added Yet
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Search -->
+        <section class="card">
+
+            <h2>Search Student</h2>
+
+            <input
+                type="text"
+                id="searchStudent"
+                placeholder="Search by Name, Roll, Department..."
+                onkeyup="searchStudent()">
+
+        </section>
+
+        <!-- Student Records -->
+        <section class="card">
+
+            <h2>Student Records</h2>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Rank</th>
+                            <th>Name</th>
+                            <th>Roll</th>
+                            <th>Department</th>
+                            <th>Total</th>
+                            <th>Percentage</th>
+                            <th>Grade</th>
+                            <th>GPA</th>
+                            <th>Actions</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="studentTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+        <!-- Toast Notification -->
+        <div id="toast" class="toast">
+            Action Completed
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            Student Portfolio & Result Management SPA
+            | HTML • CSS • JavaScript
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+
 </body>
+
 </html>
