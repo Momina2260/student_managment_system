@@ -17,9 +17,7 @@
     --shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* =========================
-   DARK MODE
-========================= */
+
 
 .dark {
     --bg: #111827;
@@ -28,9 +26,6 @@
     --border: #374151;
 }
 
-/* =========================
-   RESET
-========================= */
 
 * {
     margin: 0;
@@ -38,9 +33,6 @@
     box-sizing: border-box;
 }
 
-/* =========================
-   BODY
-========================= */
 
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -49,9 +41,7 @@ body {
     transition: 0.4s;
 }
 
-/* =========================
-   HEADER
-========================= */
+
 
 .header {
     background: linear-gradient(135deg, var(--primary), var(--secondary));
@@ -69,9 +59,7 @@ body {
     animation: fadeDown 0.6s ease;
 }
 
-/* =========================
-   CONTAINER
-========================= */
+
 
 .container {
     width: 95%;
@@ -79,9 +67,7 @@ body {
     margin: 25px auto;
 }
 
-/* =========================
-   DASHBOARD
-========================= */
+
 
 .dashboard {
     width: 95%;
@@ -108,9 +94,7 @@ body {
     transform: translateY(-5px);
 }
 
-/* =========================
-   CARD
-========================= */
+
 
 .card {
     background: var(--card-bg);
@@ -132,9 +116,7 @@ body {
     color: var(--primary);
 }
 
-/* =========================
-   FORM GRID
-========================= */
+
 
 .form-grid {
     display: grid;
@@ -142,9 +124,6 @@ body {
     gap: 15px;
 }
 
-/* =========================
-   INPUTS
-========================= */
 
 input {
     padding: 14px;
@@ -162,9 +141,6 @@ input:focus {
     box-shadow: 0 0 10px rgba(124, 58, 237, 0.3);
 }
 
-/* =========================
-   BUTTONS
-========================= */
 
 .button-group {
     margin-top: 20px;
@@ -192,9 +168,7 @@ button:active {
     transform: scale(0.95);
 }
 
-/* =========================
-   TABLE
-========================= */
+
 
 .table-container {
     overflow-x: auto;

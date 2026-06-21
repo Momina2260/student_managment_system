@@ -1,13 +1,10 @@
-/* ==========================
-   GLOBAL VARIABLES
-========================== */
+
 
 let students = [];
 let editIndex = -1;
 
-/* ==========================
-   DATE & TIME
-========================== */
+
+
 
 function updateDateTime() {
     const dateElement = document.getElementById("currentDate");
@@ -18,9 +15,6 @@ function updateDateTime() {
     }, 1000);
 }
 
-/* ==========================
-   GRADE
-========================== */
 
 function getGrade(percentage) {
 
@@ -32,9 +26,6 @@ function getGrade(percentage) {
     return "F";
 }
 
-/* ==========================
-   GPA
-========================== */
 
 function getGPA(percentage) {
 
@@ -46,9 +37,7 @@ function getGPA(percentage) {
     return 2.0;
 }
 
-/* ==========================
-   CALCULATE RESULT
-========================== */
+
 
 function calculateResult() {
 
@@ -173,9 +162,6 @@ function calculateResult() {
     clearForm(false);
 }
 
-/* ==========================
-   RESULT CARD
-========================== */
 
 function showResult(student, status) {
 
@@ -224,9 +210,7 @@ function showResult(student, status) {
     `;
 }
 
-/* ==========================
-   TABLE
-========================== */
+
 
 function displayStudent() {
 
@@ -290,9 +274,7 @@ function displayStudent() {
     ).innerHTML = rows;
 }
 
-/* ==========================
-   DELETE
-========================== */
+
 
 function deleteStudent(index) {
 
@@ -318,9 +300,7 @@ function deleteStudent(index) {
     }
 }
 
-/* ==========================
-   EDIT
-========================== */
+
 
 function editStudent(index) {
 
@@ -349,9 +329,7 @@ function editStudent(index) {
     );
 }
 
-/* ==========================
-   DASHBOARD
-========================== */
+
 
 function updateDashboard() {
 
@@ -405,9 +383,7 @@ function updateDashboard() {
         highest + "%";
 }
 
-/* ==========================
-   TOPPER CARD
-========================== */
+
 
 function updateTopper() {
 
@@ -444,9 +420,7 @@ function updateTopper() {
     `;
 }
 
-/* ==========================
-   SEARCH
-========================== */
+
 
 function searchStudent() {
 
@@ -475,9 +449,7 @@ function searchStudent() {
     });
 }
 
-/* ==========================
-   LOCAL STORAGE
-========================== */
+
 
 function saveData() {
 
@@ -509,9 +481,7 @@ function loadData() {
     }
 }
 
-/* ==========================
-   EXPORT DATA
-========================== */
+
 
 function exportData() {
 
@@ -550,9 +520,7 @@ function exportData() {
     );
 }
 
-/* ==========================
-   THEME
-========================== */
+
 
 function toggleTheme() {
 
@@ -585,9 +553,6 @@ function loadTheme() {
     }
 }
 
-/* ==========================
-   CLEAR FORM
-========================== */
 
 function clearForm(
     showMessage = true
@@ -633,9 +598,6 @@ function clearForm(
     }
 }
 
-/* ==========================
-   TOAST
-========================== */
 
 function showToast(message) {
 
@@ -660,9 +622,7 @@ function showToast(message) {
     }, 3000);
 }
 
-/* ==========================
-   INITIALIZE APP
-========================== */
+
 
 window.onload = () => {
 
